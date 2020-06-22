@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CargoControl</string>
+    <string name="user">Usuário</string>
+    <string name="login">Login</string>
+    <string name="nome">Nome</string>
+    <string name="cargo">Cargo</string>
+    <string name="senha">Senha</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="cadastrar">Cadastrar</string>
+    
+    <!-- Strings de inserção -->
+    <string name="desc">Descrição</string>
+    <string name="armazem">Armazém</string>
+
+    <string name="cadprod">Cadastrar produto</string>
+    <string name="rlztransf">Realizar transferência</string>
+    <string name="consultas">Consultas</string>
+
+</resources>
