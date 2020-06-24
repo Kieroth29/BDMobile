@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg"
+    tools:context=".ConsultaMenuActivity">
+
+    <Button
+        android:id="@+id/btnConsultarArmazem"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200sp"
+        android:background="@color/btnColor"
+        android:text="@string/consultar_arm" />
+
+    <Button
+        android:id="@+id/btnConsultarProduto"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultarArmazem"
+        android:layout_marginTop="70sp"
+        android:background="@color/btnColor"
+        android:text="@string/consultar_prod" />
+
+    <Button
+        android:id="@+id/btnConsultarTransferencia"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultarProduto"
+        android:layout_marginTop="70sp"
+        android:background="@color/btnColor"
+        android:text="@string/consultar_transf" />
+</androidx.constraintlayout.widget.ConstraintLayout>
