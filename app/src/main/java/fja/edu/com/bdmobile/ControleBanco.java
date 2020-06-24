@@ -2,6 +2,7 @@ package fja.edu.com.bdmobile;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class ControleBanco {
@@ -94,6 +95,45 @@ public class ControleBanco {
             return "Erro ao inserir registro";
         else
             return "Registro inserido com sucesso";
+    }
+
+    public Cursor carregarArmazem(){
+        Cursor cursor;
+        String[] campos =  {banco.ID,banco.LOCAL,banco.IDPRODUTO,banco.NOMEPRODUTO,banco.DESCPRODUTO};
+        db = banco.getReadableDatabase();
+        cursor = db.query(banco.TABELA1, campos, null, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
+    public Cursor carregarProdutos(){
+        Cursor cursor;
+        String[] campos =  {banco.ID,banco.NOME,banco.DESC,banco.IDARMAZEM};
+        db = banco.getReadableDatabase();
+        cursor = db.query(banco.TABELA2, campos, null, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
+    public Cursor carregarTransferencia(){
+        Cursor cursor;
+        String[] campos =  {banco.ID,banco.IDARMAZEMSAIDA,banco.IDARMAZEMDESTINO,banco.IDPRODUTO};
+        db = banco.getReadableDatabase();
+        cursor = db.query(banco.TABELA3, campos, null, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
     }
 
 }
