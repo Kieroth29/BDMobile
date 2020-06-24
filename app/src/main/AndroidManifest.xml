@@ -19,6 +19,8 @@
         <activity android:name=".CadastroActivity"/>
         <activity android:name=".ControleActivity"/>
         <activity android:name=".InserirProdutoActivity"/>
+        <activity android:name=".ConsultaArmazemActivity"/>
+        <activity android:name=".MenuActivity"/>
     </application>
 
 </manifest>

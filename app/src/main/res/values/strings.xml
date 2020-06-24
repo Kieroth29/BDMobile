@@ -16,4 +16,8 @@
     <string name="rlztransf">Realizar transferência</string>
     <string name="consultas">Consultas</string>
 
+    <string name="consultar_arm">Consultar armazéns</string>
+    <string name="consultar_prod">Consultar produtos</string>
+    <string name="consultar_transf">Consultar transferências</string>
+
 </resources>
