@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ConsultaTransferenciaActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spConsTransf"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:id="@+id/tv1ConsTransf"
+            android:layout_width="300sp"
+            android:layout_height="30sp"
+            app:layout_constraintTop_toBottomOf="@id/spConsTransf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="@string/arm_saida"
+            android:textColorHint="@color/white"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:id="@+id/tv2ConsTransf"
+            android:layout_width="300sp"
+            android:layout_height="30sp"
+            app:layout_constraintTop_toBottomOf="@id/tv1ConsTransf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="@string/arm_destino"
+            android:textColorHint="@color/white"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:id="@+id/tv3ConsTransf"
+            android:layout_width="300sp"
+            android:layout_height="30sp"
+            app:layout_constraintTop_toBottomOf="@id/tv2ConsTransf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="@string/prod_nome"
+            android:textColorHint="@color/white"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

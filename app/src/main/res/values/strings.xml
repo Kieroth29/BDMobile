@@ -20,4 +20,17 @@
     <string name="consultar_prod">Consultar produtos</string>
     <string name="consultar_transf">Consultar transferências</string>
 
+    <string name="arm_saida">Armazém de saída</string>
+    <string name="arm_destino">Armazém de destino</string>
+    <string name="produto">Produto</string>
+
+    <string name="arm_local">Local do armazém</string>
+
+    <string name="prod_nome">Nome do produto</string>
+    <string name="prod_desc">Descrição do produto</string>
+
+    <string name="alterar_dados">Alterar dados</string>
+    <string name="alterar_produto">Alterar produto</string>
+    <string name="excluir_produto">Excluir produto</string>
+
 </resources>

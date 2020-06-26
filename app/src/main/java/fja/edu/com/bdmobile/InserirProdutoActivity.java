@@ -1,5 +1,6 @@
 package fja.edu.com.bdmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,9 +30,12 @@ public class InserirProdutoActivity extends AppCompatActivity {
                     String armazemString = armazem.getText().toString();
                     String resultado;
 
-                    resultado = crud.insereArmazem(nomeString,descString,armazemString,null,null);
+                    resultado = crud.insereProduto(nomeString,descString,armazemString,null);
 
                     Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(InserirProdutoActivity.this,MenuActivity.class);
+                    startActivity(intent);
                 }
             });
         }

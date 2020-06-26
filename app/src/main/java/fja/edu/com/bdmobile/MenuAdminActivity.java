@@ -8,23 +8,24 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuAdminActivity extends AppCompatActivity {
 
-    private Button btn1,btn2,btn3;
+    private Button btn1,btn2,btn3,btn4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu_admin);
 
-        btn1 = findViewById(R.id.btn1Menu);
-        btn2 = findViewById(R.id.btn2Menu);
-        btn3 = findViewById(R.id.btn3Menu);
+        btn1 = findViewById(R.id.btn1MenuAdmin);
+        btn2 = findViewById(R.id.btn2MenuAdmin);
+        btn3 = findViewById(R.id.btn3MenuAdmin);
+        btn4 = findViewById(R.id.btn4MenuAdmin);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this,InserirProdutoActivity.class);
+                Intent intent = new Intent(MenuAdminActivity.this,InserirProdutoActivity.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this,InserirTransferenciaActivity.class);
+                Intent intent = new Intent(MenuAdminActivity.this,InserirTransferenciaActivity.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +41,15 @@ public class MenuActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this,ConsultaMenuActivity.class);
+                Intent intent = new Intent(MenuAdminActivity.this,ConsultaMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuAdminActivity.this,AlterarProdutoActivity.class);
                 startActivity(intent);
             }
         });

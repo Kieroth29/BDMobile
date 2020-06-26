@@ -21,6 +21,10 @@
         <activity android:name=".InserirProdutoActivity"/>
         <activity android:name=".ConsultaArmazemActivity"/>
         <activity android:name=".MenuActivity"/>
+        <activity android:name=".ConsultaMenuActivity" />
+        <activity android:name=".InserirTransferenciaActivity" />
+        <activity android:name=".ConsultaProdutoActivity" />
+        <activity android:name=".ConsultaTransferenciaActivity" />
     </application>
 
 </manifest>

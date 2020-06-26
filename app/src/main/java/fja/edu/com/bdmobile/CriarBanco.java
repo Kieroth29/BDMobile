@@ -1,5 +1,6 @@
 package fja.edu.com.bdmobile;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -18,7 +19,7 @@ public class CriarBanco extends SQLiteOpenHelper {
     public static final String NOME = "nome";
     public static final String DESC = "descricao";
     public static final String IDARMAZEM = "idarmazem";
-
+    public static final String LOCALARMAZEM = "localarmazem";
 
     public static final String TABELA3 = "transferencia";
 
@@ -26,6 +27,8 @@ public class CriarBanco extends SQLiteOpenHelper {
     public static final String IDARMAZEMDESTINO = "idarmazemdestino";
 
     public static final String TABELA4 = "usuario";
+    public static final String LOGIN = "loginusuario";
+    public static final String SENHA = "senhausuario";
     public static final String CARGO = "cargo";
     public static final String PERMISSAO = "permissao";
 
@@ -50,21 +53,27 @@ public class CriarBanco extends SQLiteOpenHelper {
                 + NOME + " text,"
                 + DESC + " text,"
                 + IDARMAZEM + " integer, "
-                + "FOREIGN KEY("+IDARMAZEM+") REFERENCES "+TABELA1+" ("+ID+")"
+                + LOCALARMAZEM + "text, "
+                + "FOREIGN KEY("+IDARMAZEM+") REFERENCES "+TABELA1+" ("+ID+"),"
+                + "FOREIGN KEY("+LOCALARMAZEM+") REFERENCES "+TABELA1+" ("+LOCAL+")"
                 +")";
 
         String sql3 = "CREATE TABLE "+TABELA3+"("
                 + ID + " integer primary key autoincrement,"
                 + IDARMAZEMSAIDA + " integer,"
                 + IDARMAZEMDESTINO + " integer,"
+                + NOMEPRODUTO + "text,"
                 + IDPRODUTO + " integer,"
                 + "FOREIGN KEY ("+IDARMAZEMSAIDA+") REFERENCES "+TABELA2+" ("+ID+"),"
                 + "FOREIGN KEY ("+IDARMAZEMDESTINO+") REFERENCES "+TABELA2+" ("+ID+"),"
-                + "FOREIGN KEY ("+IDPRODUTO+") REFERENCES "+TABELA2+" ("+ID+")"
+                + "FOREIGN KEY ("+IDPRODUTO+") REFERENCES "+TABELA2+" ("+ID+"),"
+                + "FOREIGN KEY("+NOMEPRODUTO+") REFERENCES "+TABELA2+"("+NOME+")"
                 +")";
 
         String sql4 = "CREATE TABLE "+TABELA4+"("
                 + ID + " integer primary key autoincrement,"
+                + LOGIN + "text,"
+                + SENHA + "text,"
                 + NOME + " text,"
                 + CARGO + " text,"
                 + PERMISSAO + " integer"
@@ -74,6 +83,19 @@ public class CriarBanco extends SQLiteOpenHelper {
         db.execSQL(sql2);
         db.execSQL(sql3);
         db.execSQL(sql4);
+
+        ContentValues dadosadmin;
+        dadosadmin = new ContentValues();
+
+        dadosadmin.put(CriarBanco.ID,1);
+        dadosadmin.put(CriarBanco.LOGIN,"admin");
+        dadosadmin.put(CriarBanco.SENHA,"admin123");
+        dadosadmin.put(CriarBanco.NOME,"Marcos Vinícius Queiroz de Sant'Ana Filho");
+        dadosadmin.put(CriarBanco.CARGO,"Administrador");
+        dadosadmin.put(CriarBanco.PERMISSAO,2);
+
+        db.insert(CriarBanco.TABELA4, null, dadosadmin);
+        db.close();
     }
 
     @Override
